@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import postData from './postPata';
 
-function App() {
+function Post() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="post">
+      <div className="post-header">
+        <img className="avatar" src={postData.author.photo} alt="avatar"></img>
+        <div className="info">
+          <div className="author-info">
+            <div className='name'>{postData.author.name}</div>
+            <div className='nickname'>{postData.author.nickname}</div>
+            <div className='date'>{postData.date}</div>
+          </div>
+          <div className="text">{postData.content}</div>
+        </div>
+      </div>
+      <div className="main-content">
+        <img
+          className="main-image"
+          src={postData.image}
+          alt="main-content"
+        ></img>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Post;
